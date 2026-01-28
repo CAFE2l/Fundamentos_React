@@ -1,7 +1,12 @@
+import styles from './App,module.css';
 
+import TextInput from './components/TextInput.jsx';
 function App() {
   return (
-    <h1>Hello, World!</h1>
+<div className={styles.appContainer}>
+      <TextInput placeholder={"Oq está acontecendo?"} maxLength={125}/>
+    
+</div>
   )
 }
 
