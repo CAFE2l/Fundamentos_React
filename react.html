@@ -6,6 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    
-</body>
-</html>
+    <div id="app">
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    </div>
+
+    <script>
+        const minhaDiv = document.getElementById('app');
+        ReactDOM.render(React.createElement('h1', null, 
+        React.createElement('span', null, 'Hello, React!') 
+     ), minhaDiv);
+
+     ReactDOM.render(
+        <h1 id="title"><span>Hello, React!</span></h1>
+        
+     );
+    </script>
+</body> 
+</html> 
