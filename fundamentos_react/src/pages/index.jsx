@@ -1,5 +1,6 @@
 import TextInput from "../components/TextInput";
 import { useState } from "react";
+import Tweet from "../components/Tweet";
 export default function Index(){
     const [text, setText] = useState('');
     const [tweetList, setTweetList] = useState([]);
@@ -33,10 +34,12 @@ export default function Index(){
                 <p>{text.length}/{maxLength}</p>
                 <button onClick={sendTweet}>Tweetar</button>
             </div>
-            <ul>
+            <ul> 
             {tweetList.map((tweet, index) => {
                  return (
-                <li key={index}>{tweet}</li>
+                <li key={index}>
+                    <Tweet>{tweet}</Tweet>
+                </li>
             )
         })}
             </ul>
