@@ -1,11 +1,12 @@
 import styles from './App.module.css';
+import Index from './pages/index.jsx';
 
-import TextInput from './components/TextInput.jsx';
+import TextInput from './pages/index.jsx';
 
 function App() {
   return (
     <div className={styles.appContainer}>
-      <TextInput maxLength={125}/>
+      <Index />
     </div>
   )
   }
