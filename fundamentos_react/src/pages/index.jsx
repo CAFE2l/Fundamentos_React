@@ -7,7 +7,7 @@ export default function Index(){
     const maxLength = 125;
 
     const tweet = {
-        date: new Date().toDateString(),
+        date: new Date(),
         text: text,
         user:{
             name: 'CAFÉ',
