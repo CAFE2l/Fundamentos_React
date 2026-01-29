@@ -5,7 +5,7 @@ import TextInput from './components/TextInput.jsx';
 function App() {
   return (
     <div className={styles.appContainer}>
-           <TextInput/>
+      <TextInput maxLength={125}/>
     </div>
   )
   }
