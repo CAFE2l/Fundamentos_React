@@ -5,9 +5,8 @@ import TextInput from './components/TextInput.jsx';
 function App() {
   return (
     <div className={styles.appContainer}>
-          <TextInput placeholder={"Oq está acontecendo?"} maxLength={125}/>
+           <TextInput/>
     </div>
   )
-}
-
+  }
 export default App
