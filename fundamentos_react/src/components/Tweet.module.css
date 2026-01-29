@@ -17,7 +17,7 @@
 
 .user{
     grid-area: user;
-
+    display: flex;  
 }
 
 .userName{

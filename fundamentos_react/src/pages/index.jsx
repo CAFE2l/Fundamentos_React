@@ -6,6 +6,16 @@ export default function Index(){
     const [tweetList, setTweetList] = useState([]);
     const maxLength = 125;
 
+    const tweet = {
+        date: new Date().toDateString(),
+        text: text,
+        user:{
+            name: 'CAFÉ',
+            username: 'CAFE2l',
+            picture: 'https://github.com/CAFE2l.png'
+        }
+    }
+
     function onTextChange(event){
         const text = event.target.value;
         if(text.length <= maxLength){
@@ -15,7 +25,7 @@ export default function Index(){
 
     function sendTweet(){
         if(text.trim()) {
-            setTweetList([text, ...tweetList]);
+            setTweetList([tweet, ...tweetList]);
             setText('');
         }
     }
@@ -38,7 +48,7 @@ export default function Index(){
             {tweetList.map((tweet, index) => {
                  return (
                 <li key={index}>
-                    <Tweet>{tweet}</Tweet>
+                    <Tweet tweet={tweet} />
                 </li>
             )
         })}
