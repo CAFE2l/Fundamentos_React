@@ -2,34 +2,15 @@ import TextInput from "../components/TextInput";
 import { useState } from "react";
 import Tweet from "../components/Tweet";
 import styles from "./Index.module.css";
+import { useIndex } from "../hooks/useIndex.page.js";
 export default function Index(){
-    const [text, setText] = useState('');
-    const [tweetList, setTweetList] = useState([]);
-    const maxLength = 125;
-
-    const tweet = {
-        date: new Date(),
-        text: text,
-        user:{
-            name: 'CAFÉ',
-            username: 'CAFE2l',
-            picture: 'https://github.com/CAFE2l.png'
-        }
-    }
-
-    function onTextChange(event){
-        const text = event.target.value;
-        if(text.length <= maxLength){
-            setText(text);
-        }
-    }
-
-    function sendTweet(){
-        if(text.trim()) {
-            setTweetList([tweet, ...tweetList]);
-            setText('');
-        }
-    }
+   const{
+    text,
+    onTextChange,
+    maxLength,
+    sendTweet,
+    tweetList   
+} = useIndex();
   
     return (
         <div>
@@ -43,7 +24,10 @@ export default function Index(){
                     onChange={onTextChange}
                 />
                 <p>{text.length}/{maxLength}</p>
-                <button onClick={sendTweet}>Tweetar</button>
+                <button onClick={sendTweet}
+                className={styles.postButton}>
+                    Tweetar
+                </button>
             </div>
             <ul className={styles.tweetList}> 
             {tweetList.map((tweet, index) => {
